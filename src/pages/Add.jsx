@@ -12,6 +12,8 @@ const Add = () => {
     ubicacion: "",
     otm: "",
     observaciones: "",
+    fecha_mantenimiento: "", // Nuevo campo para la fecha de mantenimiento
+    descripcion_mantenimiento: "", // Nuevo campo para la descripción de mantenimiento
   });
 
   const navigate = useNavigate();
@@ -35,7 +37,9 @@ const Add = () => {
       <h1>Agregar Nuevo Equipo</h1>
 
       <div className="input-control">
-        <label htmlFor="nombre"><b>Nombre</b></label>
+        <label htmlFor="nombre">
+          <b>Nombre</b>
+        </label>
         <input
           type="text"
           placeholder="Nombre"
@@ -44,7 +48,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="marca"><b>Marca</b></label>
+        <label htmlFor="marca">
+          <b>Marca</b>
+        </label>
         <input
           type="text"
           placeholder="Marca"
@@ -53,7 +59,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="modelo"><b>Modelo</b></label>
+        <label htmlFor="modelo">
+          <b>Modelo</b>
+        </label>
         <input
           type="text"
           placeholder="Modelo"
@@ -62,7 +70,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="serie"><b>Serie</b></label>
+        <label htmlFor="serie">
+          <b>Serie</b>
+        </label>
         <input
           type="text"
           placeholder="Serie"
@@ -71,7 +81,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="etiqueta_patrimonial"><b>Etiqueta Patrimonial</b></label>
+        <label htmlFor="etiqueta_patrimonial">
+          <b>Etiqueta Patrimonial</b>
+        </label>
         <input
           type="text"
           placeholder="Etiqueta patrimonial"
@@ -80,7 +92,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="ubicacion"><b>Ubicacion</b></label>
+        <label htmlFor="ubicacion">
+          <b>Ubicacion</b>
+        </label>
         <input
           type="text"
           placeholder="Ubicacion"
@@ -89,7 +103,9 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="otm"><b>OTM</b></label>
+        <label htmlFor="otm">
+          <b>OTM</b>
+        </label>
         <input
           type="text"
           placeholder="Otm"
@@ -98,14 +114,40 @@ const Add = () => {
         />
       </div>
       <div className="input-control">
-        <label htmlFor="observaciones"><b>Observaciones</b></label>
+        <label htmlFor="observaciones">
+          <b>Observaciones</b>
+        </label>
         {/* <input
           type="text"
           placeholder="Observaciones"
           onChange={handleChange}
           name="observaciones"
         /> */}
-        <textarea name="observaciones" onChange={handleChange} cols="30" rows="3" placeholder="Observaciones"></textarea>
+        <textarea
+          name="observaciones"
+          onChange={handleChange}
+          cols="30"
+          rows="3"
+          placeholder="Observaciones"
+        ></textarea>
+      </div>
+      <div className="input-control">
+        <label htmlFor="fecha_mantenimiento">
+          <b>Fecha de Mantenimiento</b>
+        </label>
+        <input type="date" onChange={handleChange} name="fecha_mantenimiento" />
+      </div>
+      <div className="input-control">
+        <label htmlFor="descripcion_mantenimiento">
+          <b>Descripción de Mantenimiento</b>
+        </label>
+        <textarea
+          name="descripcion_mantenimiento"
+          onChange={handleChange}
+          cols="30"
+          rows="3"
+          placeholder="Descripción de Mantenimiento"
+        ></textarea>
       </div>
       <button onClick={handleClick}>Agregar</button>
     </div>
