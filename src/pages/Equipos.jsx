@@ -36,7 +36,7 @@ const Equipos = () => {
     };
     fetchAllEquipos();
   }, []);
-  
+
   const handleVerDetalles = (equipo) => {
     setEquipoSeleccionado(equipo);
     setShowModal(true);
@@ -53,11 +53,15 @@ const Equipos = () => {
     })
   );
 
+  const handleInputChange = (event) => {
+    setFiltro(event.target.value);
+  };
+
   return (
     <>
       <div>
         <div className="cabecera">
-          <div>
+          <div className="agg">
             <Link to="/add" className="add_link">
               Agregar Nuevo Equipo
             </Link>
@@ -71,40 +75,40 @@ const Equipos = () => {
             className="input_filtro"
             placeholder="Buscar..."
             value={filtro}
-            onChange={(e) => setFiltro(e.target.value)}
+            onChange={handleInputChange}
           />
         </div>
         <div className="table-responsive">
           <table className="table table-striped">
             <thead className="custom-thead">
               <tr>
-                <th scope="col">N</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Modelo</th>
-                <th scope="col">Serie</th>
-                <th scope="col">Etiqueta Patrimonial</th>
-                <th scope="col">Ubicacion</th>
-                <th scope="col">OTM</th>
-                <th scope="col">Últ. Mantenimiento</th>
-                <th scope="col">Botón 1</th>
-                <th scope="col">Botón 2</th>
+                <th className="h_1" scope="col">N</th>
+                <th className="h_2" scope="col">Nombre</th>
+                <th className="h_3" scope="col">Marca</th>
+                <th className="h_4" scope="col">Modelo</th>
+                <th className="h_5" scope="col">Serie</th>
+                <th className="h_6" scope="col">Etiqueta Patrimonial</th>
+                <th className="h_7" scope="col">Ubicación</th>
+                <th className="h_8" scope="col">OTM</th>
+                <th className="h_9" scope="col">Últ. Mantenimiento</th>
+                <th className="h_10" scope="col">Botón 1</th>
+                {/* <th scope="col">Botón 2</th> */}
               </tr>
             </thead>
             <tbody>
               {console.log(equipos)}
               {equiposFiltrados.map((equipo, i) => (
                 <tr key={i}>
-                  <td>{i + 1}</td>
-                  <td title={equipo.nombre}>{equipo.nombre}</td>
-                  <td>{equipo.marca}</td>
-                  <td>{equipo.modelo}</td>
-                  <td>{equipo.serie}</td>
-                  <td>{equipo.etiqueta_patrimonial}</td>
-                  <td>{equipo.ubicacion}</td>
-                  <td>{equipo.otm}</td>
+                  <td className="h_1">{i + 1}</td>
+                  <td className="h_2" title={equipo.nombre}>{equipo.nombre}</td>
+                  <td className="h_3">{equipo.marca}</td>
+                  <td className="h_4">{equipo.modelo}</td>
+                  <td className="h_5">{equipo.serie}</td>
+                  <td className="h_6">{equipo.etiqueta_patrimonial}</td>
+                  <td className="h_7">{equipo.ubicacion}</td>
+                  <td className="h_8">{equipo.otm}</td>
                   {equipo.ultimoMantenimiento !== undefined ? (
-                    <td>
+                    <td className="h_9">
                       {format(
                         new Date(
                           equipo.ultimoMantenimiento.fecha_mantenimiento
@@ -113,7 +117,7 @@ const Equipos = () => {
                       )}
                     </td>
                   ) : (
-                    <td>-</td>
+                    <td className="h_9">-</td>
                   )}
 
                   {console.log(equipo.ultimoMantenimiento)}
@@ -132,11 +136,11 @@ const Equipos = () => {
                       Detalles
                     </button>
                   </td>
-                  <td>
+                  {/* <td>
                     <button className="update btn btn-warning">
                       <Link to={`/update/${equipo.id}`}>Editar</Link>
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>

@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 15px;
 }
 .vacio {
@@ -32,6 +32,7 @@ body {
 .bloque_filtros {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 #form {
@@ -137,7 +138,7 @@ h1 {
   width: 95%;
   margin: auto;
   /* max-height: 500px; */
-  max-height: 85vh;
+  max-height: 80vh;
 }
 
 /* --- */
@@ -194,9 +195,17 @@ h1 {
 } */
 
 tr td {
-  max-height: 50px;
+  max-height: 50px !important;
   overflow: hidden;
 }
+
+/* tr td {
+  height: 50px;
+  max-height: 50px;
+  max-width: 150px;
+  overflow: hidden;
+} */
+
 
 .input_filtro {
   padding: 8px;
@@ -209,4 +218,51 @@ tr td {
   outline: none; /* Elimina el contorno predeterminado en el estado de foco */
   border-color: #007bff; /* Cambia el color del borde al seleccionar el input */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Agrega un sombreado alrededor del input en el estado de foco */
+}
+
+/**/
+
+.h_2 {
+  max-width: 124.53px;
+}
+.h_3 {
+  max-width: 100px;
+}
+.h_4 {
+  max-width: 115px;
+}
+.h_5 {
+  max-width: 155px;
+}
+.h_6 {
+  max-width: 163px;
+}
+.h_7 {
+  max-width: 300px;
+}
+.h_8 {
+  max-width: 172px;
+}
+.h_9 {
+  max-width: 132px;
+}
+
+/* media queries */
+@media (max-width: 400px) {
+  .cabecera {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 5px;
+  }
+  .vacio {
+    display: none;
+  }
+
+  .agg {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
 }

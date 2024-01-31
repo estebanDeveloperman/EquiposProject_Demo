@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import ConfirmarEliminacionModal from "./ConfirmarEliminacionModal";
+import { Link } from "react-router-dom";
 
 const DetalleEquipoModal = ({ show, onHide, equipo }) => {
   const [confirmarEliminar, setConfirmarEliminar] = useState(false);
@@ -80,6 +81,10 @@ const DetalleEquipoModal = ({ show, onHide, equipo }) => {
               </p>
             </>
           )}
+          <p>
+            <b>Fecha de Registro</b>:{" "}
+            {format(new Date(equipo.fecha_registro), "dd/MM/yyyy")}
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <button
@@ -87,6 +92,9 @@ const DetalleEquipoModal = ({ show, onHide, equipo }) => {
             onClick={() => setConfirmarEliminar(true)}
           >
             Eliminar
+          </button>
+          <button className="update btn btn-warning">
+            <Link to={`/update/${equipo.id}`}>Editar</Link>
           </button>
           <Button variant="secondary" onClick={onHide}>
             Cerrar
