@@ -29,6 +29,11 @@ body {
   height: 50px;
 }
 
+.bloque_filtros {
+  width: 90%;
+  margin: 0 auto;
+}
+
 #form {
   width: 450px;
   margin: 0vh auto 0 auto;
@@ -114,23 +119,25 @@ button {
 table thead tr th,
 table tbody tr td {
   text-align: center;
+  vertical-align: middle;
 }
 
 h1 {
   text-align: center;
 }
 
-tr td {
+/* tr td {
   height: 50px;
   max-height: 50px;
   max-width: 150px;
   overflow: hidden;
-}
+} */
 
 .table-responsive {
   width: 95%;
   margin: auto;
-  height: 100vh;
+  /* max-height: 500px; */
+  max-height: 85vh;
 }
 
 /* --- */
@@ -157,10 +164,49 @@ tr td {
 }
 .update a {
   display: block;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   text-decoration: none;
   color: #ffffff;
   display: grid;
   place-items: center;
+}
+
+/* modal */
+.modal-body p {
+  overflow-wrap: break-word;
+}
+
+.custom-thead {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.custom-thead tr th {
+  background: #0f029e;
+  color: white;
+}
+
+/* tbody tr td {
+  height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+} */
+
+tr td {
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.input_filtro {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.input_filtro:focus {
+  outline: none; /* Elimina el contorno predeterminado en el estado de foco */
+  border-color: #007bff; /* Cambia el color del borde al seleccionar el input */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Agrega un sombreado alrededor del input en el estado de foco */
 }
