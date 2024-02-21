@@ -28,7 +28,8 @@ const Update = () => {
 
     const fetachAllEquipos = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/equipos");
+        //const res = await axios.get("http://localhost:8800/equipos");
+        const res = await axios.get("https://equipoprojectbackend-production.up.railway.app/equipos");
         setEquipo(res.data.find(esId));
       } catch (err) {
         console.log(err);
@@ -38,7 +39,8 @@ const Update = () => {
     const fetchMantenimiento = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8800/equipos/${equipoId}/mantenimiento`
+          //`http://localhost:8800/equipos/${equipoId}/mantenimiento`
+          `https://equipoprojectbackend-production.up.railway.app/equipos/${equipoId}/mantenimiento`
         );
         const ultimaMantenimiento = res.data[0]; // Suponiendo que los resultados están ordenados por fecha descendente
 
@@ -65,7 +67,8 @@ const Update = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.put("http://localhost:8800/equipos/" + equipoId, equipo);
+      //await axios.put("http://localhost:8800/equipos/" + equipoId, equipo);
+      await axios.put("https://equipoprojectbackend-production.up.railway.app/equipos/" + equipoId, equipo);
       navigate("/");
     } catch (err) {
       console.log(err);

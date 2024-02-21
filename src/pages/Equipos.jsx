@@ -13,14 +13,16 @@ const Equipos = () => {
   useEffect(() => {
     const fetchAllEquipos = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/equipos");
+        //const res = await axios.get("http://localhost:8800/equipos");
+        const res = await axios.get("https://equipoprojectbackend-production.up.railway.app/equipos");
         const equiposData = res.data;
 
         // Obtener la información del último mantenimiento para cada equipo
         const equiposConMantenimiento = await Promise.all(
           equiposData.map(async (equipo) => {
             const resMantenimiento = await axios.get(
-              `http://localhost:8800/equipos/${equipo.id}/mantenimiento`
+              //`http://localhost:8800/equipos/${equipo.id}/mantenimiento`
+              `https://equipoprojectbackend-production.up.railway.app/equipos/${equipo.id}/mantenimiento`
             );
             const ultimoMantenimiento = resMantenimiento.data[0];
 
