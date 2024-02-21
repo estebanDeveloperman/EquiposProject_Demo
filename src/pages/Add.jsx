@@ -26,7 +26,7 @@ const Add = () => {
     e.preventDefault();
     try {
       // await axios.post("http://localhost:8800/equipos", equipo);
-      await axios.post("https://equipoprojectbackend-production.up.railway.app//equipos", equipo);
+      await axios.post("https://equipoprojectbackend-production.up.railway.app/equipos", equipo);
       navigate("/");
     } catch (err) {
       console.log(err);
